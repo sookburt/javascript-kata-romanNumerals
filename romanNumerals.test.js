@@ -1,15 +1,14 @@
-const { sum } = require("./romanNumerals");
+const { getRomanNumeral } = require("./romanNumerals");
 
-describe("sum", () => {
-  test("returns the sum of two numbers", () => {
+describe("getRomanNumeral", () => {
+  test("returns 1 when I passed in", () => {
 
     // Arrange
-    const a = 2;
-    const b = 2;
-    const expectedResult = 4;
+    const I = "I";
+    const expectedResult = 1;
 
     // Act
-    const actualResult = sum(a, b);
+    const actualResult = getRomanNumeral(I);
 
     // assert
     expect(actualResult).toBe(expectedResult);
