@@ -1,3 +1,5 @@
 # javascript-kata-romanNumerals 
 
-Playing with TDD.
+## Experimenting with TDD.
+
+* Using Arrange: Act: Assert, Red - Green - Refactor cycle to complete kata.
