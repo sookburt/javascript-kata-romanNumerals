@@ -20,16 +20,15 @@ const getRomanNumeral = (number) => {
 
     // 874 - 4 = 870 - 70 = 800
     let innerNum = number;
+    let totalNumCount = number.toString().length -1;
     const outArray = [];
 
-    // NOTE: infinite loop! coz getting the 0 from 870 after deducting the 4
-    // while(innerNum > 0){
-    //   const numArray = innerNum.toString().split("");
-    //   const lastNum = parseInt(numArray.pop());
-    //   outArray.push(lastNum);
-    //   innerNum -= lastNum; 
-    //   console.log(innerNum);
-    // }
+    while(innerNum > 0){
+      const lastNum = parseInt(innerNum.toString().substring(totalNumCount)); 
+      outArray.push(lastNum);
+      innerNum -= lastNum; 
+      totalNumCount --;
+      }
 
     return outArray;
   };
@@ -58,7 +57,7 @@ const getRomanNumeral = (number) => {
     numerals.set(900, "CM");
     numerals.set(1000, "M");
 
-    numberArray.forEach(num => {
+    numberArray.reverse().forEach(num => {
 
       output+= numerals.get(num);// || // if not in the map will need to some fartarsery...
 
