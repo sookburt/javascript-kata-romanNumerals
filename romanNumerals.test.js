@@ -3,7 +3,6 @@ const { getRomanNumeral } = require("./romanNumerals");
 
 describe("getRomanNumeral", () => {
 
-  // Arrange : Act : Assert
   it.each([
     [1, "I"],
     [2, "II"],
@@ -21,7 +20,6 @@ describe("getRomanNumeral", () => {
     [8, "VIII"],
   ])("returns correct Roman Numeral when number %i passed in", 
     (number, numeral) => {
-    // Arrange : Act : Assert
     expect(getRomanNumeral(number)).toBe(numeral);
   });
 
@@ -30,13 +28,11 @@ describe("getRomanNumeral", () => {
     [10, "X"],
   ])("returns correct Roman Numeral when number %i passed in", 
     (number, numeral) => {
-    // Arrange : Act : Assert
     expect(getRomanNumeral(number)).toBe(numeral);
   });
 
   xtest("That 874 returns DCCCLXXIV", () => {
     expect(getRomanNumeral(874)).toBe("DCCCLXXIV");
   });
-  
 
 });
