@@ -1,52 +1,42 @@
+const { TestWatcher } = require("jest");
 const { getRomanNumeral } = require("./romanNumerals");
 
 describe("getRomanNumeral", () => {
-  test("returns correct Roman Numeral when number under 4 passed in", () => {
-    // Arrange : Act : Assert
-    expect(getRomanNumeral(1)).toBe("I");
-    expect(getRomanNumeral(2)).toBe("II");
-    expect(getRomanNumeral(3)).toBe("III");
+
+  // Arrange : Act : Assert
+  it.each([
+    [1, "I"],
+    [2, "II"],
+    [3, "III"],
+  ])(`returns correct Roman Numeral when number %i passed in`, 
+    (number, numeral) => {
+      expect(getRomanNumeral(number)).toBe(numeral);
   });
 
-  test("returns correct Roman Numeral when number 4 passed in", () => {
+  it.each([
+    [4, "IV"],
+    [5, "V"],
+    [6, "VI"],
+    [7, "VII"],
+    [8, "VIII"],
+  ])("returns correct Roman Numeral when number %i passed in", 
+    (number, numeral) => {
     // Arrange : Act : Assert
-    expect(getRomanNumeral(4)).toBe("IV");
+    expect(getRomanNumeral(number)).toBe(numeral);
   });
 
-  test("returns correct Roman Numeral when number 5 passed in", () => {
+  it.each([
+    [9, "IX"],
+    [10, "X"],
+  ])("returns correct Roman Numeral when number %i passed in", 
+    (number, numeral) => {
     // Arrange : Act : Assert
-    expect(getRomanNumeral(5)).toBe("V");
+    expect(getRomanNumeral(number)).toBe(numeral);
   });
 
-  test("returns correct Roman Numeral when number 6 passed in", () => {
-    // Arrange : Act : Assert
-    expect(getRomanNumeral(6)).toBe("VI");
-  });
-
-  test("returns correct Roman Numeral when number 7 passed in", () => {
-    // Arrange : Act : Assert
-    expect(getRomanNumeral(7)).toBe("VII");
-  });
-
-  test("returns correct Roman Numeral when number 8 passed in", () => {
-    // Arrange : Act : Assert
-    expect(getRomanNumeral(8)).toBe("VIII");
-  });
-
-  test("returns correct Roman Numeral when number 9 passed in", () => {
-    // Arrange : Act : Assert
-    expect(getRomanNumeral(9)).toBe("IX");
+  xtest("That 874 returns DCCCLXXIV", () => {
+    expect(getRomanNumeral(874)).toBe("DCCCLXXIV");
   });
   
-  test("returns correct Roman Numeral when number 10 passed in", () => {
-    // Arrange : Act : Assert
-    expect(getRomanNumeral(10)).toBe("X");
-  });
-
-  test("returns correct Roman Numeral when number 11 passed in", () => {
-    // Arrange : Act : Assert
-    expect(getRomanNumeral(11)).toBe("XI");
-  });
-
 
 });
