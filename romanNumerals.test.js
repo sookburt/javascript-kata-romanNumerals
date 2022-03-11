@@ -3,6 +3,15 @@ const { getRomanNumeral } = require("./romanNumerals");
 
 describe("getRomanNumeral", () => {
 
+  test("that an error is thrown when passing in an inappropriate number", () => {
+    expect(() => {
+      getRomanNumeral(0);
+    }).toThrow("number must be greater than 0"); 
+    expect(() => {
+      getRomanNumeral(4000);
+    }).toThrow("number must be 3000 or less");
+  });
+
   it.each([
     [1, "I"],
     [2, "II"],
@@ -31,7 +40,7 @@ describe("getRomanNumeral", () => {
     expect(getRomanNumeral(number)).toBe(numeral);
   });
 
-  xtest("That 874 returns DCCCLXXIV", () => {
+  test("That 874 returns DCCCLXXIV", () => {
     expect(getRomanNumeral(874)).toBe("DCCCLXXIV");
   });
 
