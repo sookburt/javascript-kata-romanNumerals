@@ -58,13 +58,13 @@ const getRomanNumeral = (number) => {
     numerals.set(1000, "M");
 
     numberArray.reverse().forEach(num => {
-      console.log("The current num is: " + num);
+
       if (numerals.get(num) === undefined) {
+
         let numeralBuilder = "";
         let quinValue = "";
         let decValue = "";
 
-        // TODO: would a switch work better here?  Consider once working
         if (num > 1 && num < 10) {
           quinValue = numerals.get(5);
           decValue = numerals.get(1);
@@ -76,6 +76,9 @@ const getRomanNumeral = (number) => {
         if (num > 100 && num < 1000) {
           quinValue = numerals.get(500);
           decValue = numerals.get(100);
+        }
+        if (num > 1000 && num < 3001) {
+          decValue = numerals.get(1000);
         }
 
         const firstNum = num.toString().split("")[0];

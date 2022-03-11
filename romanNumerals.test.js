@@ -44,4 +44,24 @@ describe("getRomanNumeral", () => {
     expect(getRomanNumeral(874)).toBe("DCCCLXXIV");
   });
 
+  test("That 222 returns CCXXII", () => {
+    expect(getRomanNumeral(222)).toBe("CCXXII");
+  });
+
+  test("That 444 returns CDXLIV", () => {
+    expect(getRomanNumeral(444)).toBe("CDXLIV");
+  });
+
+  test("That 999 returns CMXCIX", () => {
+    expect(getRomanNumeral(999)).toBe("CMXCIX");
+  });
+
+  test("That 555 returns DLV", () => {
+    expect(getRomanNumeral(555)).toBe("DLV");
+  }); 
+
+  test("That 2222 returns MMCCXXII", () => {
+    expect(getRomanNumeral(2222)).toBe("MMCCXXII");
+  });
+
 });
