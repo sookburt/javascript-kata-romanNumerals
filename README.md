@@ -1,7 +1,6 @@
-# javascript-kata-romanNumerals 
+# Roman Numerals Kata: 
 
-## Experimenting with TDD.
+## Experimenting with TDD:
 
-* Using Arrange: Act: Assert, Red - Green - Refactor cycle to complete kata.
-
- This is against: [Roman Numerals Kata](https://codingdojo.org/kata/RomanNumerals/)
+* Using Jest and TDD with Arrange: Act: Assert, Red - Green - Refactor cycle to complete kata for Tech Returners tech task.
+* Using: [Roman Numerals Kata](https://codingdojo.org/kata/RomanNumerals/).
