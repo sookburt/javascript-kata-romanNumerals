@@ -1,5 +1,6 @@
 
-const getRomanNumeral = (number) => { 
+const getRomanNumeral = (number) => {
+   
   if (number < 1) throw new Error("number must be greater than 0");
   if (number > 3000) throw new Error("number must be 3000 or less");
 
@@ -34,7 +35,6 @@ const getRomanNumeral = (number) => {
       innerNum -= lastNum; 
       totalNumCount --;
       }
-    //console.log(outArray.toString);
     return outArray;
   };
 
@@ -104,8 +104,5 @@ const getRomanNumeral = (number) => {
 
     return output;
   };
-
-
-
 
 module.exports = { getRomanNumeral };
